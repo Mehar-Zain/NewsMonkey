@@ -150,7 +150,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import NewsItem from "./NewsItem";
-import Spinner from "./spinner";
+import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import { useSearchParams } from "react-router-dom";
 
