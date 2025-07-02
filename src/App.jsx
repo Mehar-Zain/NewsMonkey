@@ -21,7 +21,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="general"
               pageSize={12}
               country="us"
@@ -34,7 +34,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="business"
               pageSize={12}
               country="us"
@@ -47,7 +47,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="entertainment"
               pageSize={12}
               country="us"
@@ -60,7 +60,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="health"
               pageSize={12}
               country="us"
@@ -73,7 +73,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="science"
               pageSize={12}
               country="us"
@@ -86,7 +86,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="sports"
               pageSize={12}
               country="us"
@@ -99,7 +99,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="technology"
               pageSize={12}
               country="us"
@@ -112,7 +112,7 @@ const App = () => {
           element={
             <News
               setProgress={setProgress}
-              apiKey={apiKey}
+              //apiKey={apiKey}    i removed it myself
               key="search"
               pageSize={12}
               country="us"

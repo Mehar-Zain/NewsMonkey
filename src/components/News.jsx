@@ -161,7 +161,7 @@ const News = (props) => {
   const [totalResults, setTotalResults] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
-  const { country, category, pageSize, apiKey, setProgress } = props;
+  const { country, category, pageSize, setProgress } = props;//i removed apiKey from this line myself
   const [searchParams] = useSearchParams();
   const searchQuery = props.searchQuery || searchParams.get("q") || "";
 
@@ -172,9 +172,23 @@ const News = (props) => {
     setProgress && setProgress(10);
     setLoading(true);
 
-    let url = searchQuery
-      ? `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`
-      : `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+    // let url = searchQuery
+    //   ? `https://newsapi.org/v2/everything?q=${encodeURIComponent(searchQuery)}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`
+    //   : `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+
+
+    const baseURL = "/api/getNews";
+    const params = new URLSearchParams({
+      country,
+      category,
+      page,
+      pageSize,
+    });
+    if (searchQuery) {
+      params.append("q", searchQuery);
+    }
+    const url = `${baseURL}?${params.toString()}`;
+
 
     try {
       const response = await fetch(url);
@@ -200,7 +214,7 @@ const News = (props) => {
 
     setLoading(false);
     setProgress && setProgress(100);
-  }, [page, searchQuery]);
+  }, [page, searchQuery, category, country, pageSize, setProgress]);
 
   useEffect(() => {
     setArticles([]);
@@ -277,7 +291,7 @@ News.propTypes = {
   category: PropTypes.string,
   searchQuery: PropTypes.string,
   setProgress: PropTypes.func,
-  apiKey: PropTypes.string.isRequired,
+  // apiKey: PropTypes.string.isRequired,     i removed it myself
 };
 
 export default News;
